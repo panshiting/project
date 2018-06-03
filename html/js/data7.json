@@ -1,0 +1,10 @@
+{
+    "data": [
+        {"name": "其他地区", "value": 200, "scale": 20.08},
+        {"name": "地区一", "value": 200, "scale": 10},
+        {"name": "地区二", "value": 200, "scale": 10},
+        {"name": "地区三", "value": 200, "scale": 10.44},
+        {"name": "地区四", "value": 200, "scale": 10.05},
+        {"name": "地区五", "value": 200, "scale": 16.05}
+    ]
+}

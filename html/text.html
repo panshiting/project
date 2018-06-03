@@ -1,0 +1,141 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8"/>
+<title>PHP中文网--HTML5文字弹幕效果代码</title>
+<style type="text/css">
+*{
+    margin:0;
+    padding:0;
+    list-style: none;
+    border:0;
+}
+body{
+    background: #bcbcbc;
+}
+.main{
+    width: 600px;
+    height: 170px;
+    margin:0 auto;
+    position: relative;
+}
+.main img{
+    position: absolute;
+    right: 0;
+    bottom:0;
+    width: 100px;
+    height: 100px;
+}
+#canvas{
+    width: 100%;
+    height: 170px;
+    display: block;
+    background: #000;
+}
+</style>
+</head>
+<body>
+ 
+<p class="main">
+    <canvas id="canvas">嗨帅哥您的浏览器不支持canvas赶紧去升级吧</canvas>
+</p>
+ 
+<script type="text/javascript">
+    var canvas=document.getElementById('canvas');
+    var ctx=canvas.getContext("2d");
+    var width=600;
+    var height=170;
+    var textArr = [
+        {"name":"工业和信息化技术领域1","value": 501},
+        {"name":"工业和信息化技术领域2","value": 710},
+        {"name":"工业和信息化技术领域3","value": 202},
+        {"name":"工业和信息化技术领域4","value": 450},
+        {"name":"工业和信息化技术领域5","value": 560},
+        {"name":"工业和信息化技术领域6","value": 980},
+        {"name":"工业和信息化技术领域7","value": 40},
+        {"name":"工业和信息化技术领域8","value": 205},
+        {"name":"工业和信息化技术领域9","value": 109},
+    ]
+    canvas.width=width;
+    canvas.height=height;
+    var image=new Image();
+    //设置字体大小
+    var getIndex = function (value) {
+        var index = '';
+        if (value < 10) {index = 11}
+        else if (value >= 10 && value < 50) {index = 10}
+        else if (value >= 50 && value < 100) {index = 9}
+        else if (value >= 100 && value < 200) {index = 8}
+        else if (value >= 200 && value < 300) {index = 7}
+        else if (value >= 300 && value < 400) {index = 6}
+        else if (value >= 400 && value < 500) {index = 5}
+        else if (value >= 500 && value < 600) {index = 4}
+        else if (value >= 600 && value < 700) {index = 3}
+        else if (value >= 700 && value < 800) {index = 2}
+        else if (value >= 800) {index = 1}
+        return index;
+    }
+    var getFonSize = function (n) {
+        var fontSize = '';
+        switch (n) {
+            case 11: 
+                fontSize =  '12px Courier New';
+                break;
+            case 10: 
+                fontSize =  '14px Courier New';
+                break;
+            case 9: 
+                fontSize =  '16px Courier New';
+                break;
+            case 8: 
+                fontSize =  '18px Courier New';
+                break;
+            case 7: 
+                fontSize =  '20px Courier New';
+                break;
+            case 6: 
+                fontSize =  '22px Courier New';
+                break;
+            case 5: 
+                fontSize =  '24px Courier New';
+                break;
+            case 4: 
+                fontSize =  '26px Courier New';
+                break;
+            case 3: 
+                fontSize =  '28px Courier New';
+                break;
+            case 2: 
+                fontSize =  '30px Courier New';
+                break;
+            case 1: 
+                fontSize =  '32px Courier New';
+                break;
+        }
+        return fontSize;
+    }
+    var colorArr=["#f3bd66","#efe833","#c47eff","#ffea02","#7489f6","#7cb2bb","#d67271","#5a42b7","#c46a6d","c47eff"];
+    var numArrL=[80,100,5,300,500,430,50,250,8,200];//初始的X
+    var numArrT=[30,90,70,130,100,60,80,30,130,50];//初始的Y
+    setInterval(function(){
+    ctx.clearRect(0,0,canvas.width,canvas.height);
+    ctx.save();
+    for(var j=0;j<textArr.length;j++){
+        numArrL[j]-=(j+1)*0.6;
+        ctx.fillStyle = colorArr[j]
+        ctx.font = getFonSize(getIndex(textArr[j].value));
+        ctx.fillText(textArr[j].name,numArrL[j],numArrT[j]);
+    }
+    for(var i=0;i<textArr.length;i++){
+        if(numArrL[i]<=-500){
+            numArrL[i]=canvas.width;
+        }
+    }
+    ctx.restore();
+    },50)
+ 
+</script>
+ 
+ 
+</body>
+</html>

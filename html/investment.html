@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>广东省投资项目在线审批监管平台</title>
+	<link rel="stylesheet" href="css/investment.css" />
+</head>
+<body>
+<div class="invest-wrap">
+	<div class="top-side">
+		<div class="tleft-box">
+			<h3>投资项目登记情况</h3>
+			<p id="cur_date"></p>
+			<div class="top-qm">
+				<div class="qm-til"></div>
+				<div class="qm-total">
+					<div class="qm-item">
+						<p>取码总数</p>
+						<div class="number" id="qm_sum">
+							<!-- <span>1</span>
+							<em>,</em>
+							<span>2</span>
+							<span>0</span>
+							<span>6</span>
+							<em>,</em>
+							<span>6</span>
+							<span>6</span>
+							<span>6</span>
+							<em>个</em> -->
+						</div>
+					</div>
+				</div>
+				<div class="all-tze">
+					<div class="qm-item">
+						<p>总投资额</p>
+						<div class="number" id="tz_sum">
+							<!-- <span>1</span>
+							<em>,</em>
+							<span>2</span>
+							<span>0</span>
+							<span>6</span>
+							<em>,</em>
+							<span>6</span>
+							<span>6</span>
+							<span>6</span>
+							<em>亿元</em> -->
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="bot-types">
+				<div class="type-til"></div>
+				<div class="type-wrap">
+					<div class="type-item">
+						<p>审批</p>
+						<div class="num" id="sp_num"></div>
+					</div>
+					<div class="type-item">
+						<p>核准</p>
+						<div class="num" id="hz_num"></div>
+					</div>
+					<div class="type-item">
+						<p>备案</p>
+						<div class="num" id="bak_num"></div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="bread-crumb"><a href="javascript:;" id="province_name">广东省</a><span id="area_name"></span></div>
+		<div class="map-box">
+			<div class="map" id="gd_map"></div>
+		</div>
+		<div class="tright-box">
+			<div class="area-box">
+				<!-- <div class="tabs" id="area_tab">
+					<a href="javascript:;" class="on">赋码数</a>
+					<a href="javascript:;">投资额</a>
+				</div>
+				<div class="area-content" id="area_cont">
+				</div> -->
+				<div class="table">
+					<table>
+						<thead>
+							<tr>
+								<th>事项名称</th>
+								<th>平均办理时间</th>
+								<th>法定时限</th>
+							</tr>
+						</thead>
+						<tbody id="deal_time_box">
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+		<div class="hot-box">
+			<div class="hot-content">
+				<div class="hot-title">
+					<canvas id="canvas"></canvas>
+					<!-- <div id="hot-title4">1212业和信息化技术领</div>
+					<div id="hot-title10">1212业和信息化技术领</div>
+					<div id="hot-title11">1212业和信息化技术领</div>
+					<div id="hot-title2">1212业和信息化技术领</div>
+					<div id="hot-title1">1212业和信息化技术领</div>
+					<div id="hot-title9">1212业和信息化技术领</div>
+					<div id="hot-title8">1212业和信息化技术领</div>
+					<div id="hot-title3">1212业和信息化技术领</div>
+					<div id="hot-title5">1212业和信息化技术领</div>
+					<div id="hot-title7">1212业和信息化技术领</div>
+					<div id="hot-title6">1212业和信息化技术领</div> -->
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="bottom-side">
+		<div class="lbox-bot">
+			<div class="lbox-chart">
+				<div class="tabs" id="chart_tab">
+					<!-- <a href="javascript:;" class="on">赋码数</a>
+					<a href="javascript:;">投资额</a> -->
+					<a href="javascript:;" class="on">地区</a>
+					<a href="javascript:;">部门</a>
+					<a href="javascript:;">行业</a>
+				</div>
+				<div class="chart-content" id="chart_cont">
+					<div id="fm_num1"></div>
+					<div id="fm_num2"></div>
+				</div>
+			</div>
+		</div>
+		<div class="rbox-bot">
+			<div class="fm-list">
+				<table>
+					<thead>
+						<tr>
+							<th>项目名称</th>
+							<th>项目类型</th>
+							<th>完成时间</th>
+							<th>地区</th>
+							<th>状态</th>
+						</tr>
+					</thead>
+					<tbody id="register_fm">
+						<tr>
+							<td>标题111111</td>
+							<td>审批</td>
+							<td>2018-05-15 08:02:02</td>
+							<td>佛山</td>
+							<td>已赋码</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</div>
+</div>
+
+<script type="text/javascript" src="js/jquery-3.0.0.min.js"></script>
+<script type="text/javascript" src="js/echarts.min.js"></script>
+<script type="text/javascript" src="js/investment.js" ></script>
+</body>
+</html>
